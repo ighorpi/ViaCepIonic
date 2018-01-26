@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/observable';
+import { ViacepProvider} from '../../providers/viacep/viacep';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public resultApi:any = {};
-  public feedApi:any = {};
-
-  constructor(public navCtrl: NavController,
-              public httpClient: HttpClient) {}
-              
-    callApi():void {
-      this.httpClient.get(`http://viacep.com.br/ws/${this.feedApi.cep}/json/`)
-      .subscribe(
+	
+	private cep;
+	private endereco:any = {};
+	
+  constructor(public navCtrl: NavController, private viacep: ViacepProvider) {}
+	
+	getEndereco(){
+		this.viacep.callService(this.cep)
+		.subscribe(
         data =>{
-          this.resultApi = data;
-          console.log(data);
+		this.endereco = data;
+		console.log(data);
         }
       );
-    }
+	}
+	
+
+    
 }

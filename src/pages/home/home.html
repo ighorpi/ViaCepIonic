@@ -13,11 +13,11 @@
       <ion-col col-10>
         <ion-item>
           <ion-label color="primary">CEP: </ion-label>
-          <ion-input type="tel" placeholder="01001-000" [(ngModel)]="feedApi.cep"></ion-input>
+          <ion-input type="tel" placeholder="01001-000" [(ngModel)]="cep"></ion-input>
         </ion-item>
         </ion-col>
         <ion-col col-1>
-            <button ion-button (click)="callApi()">
+            <button ion-button (click)="getEndereco()">
                 <ion-icon name="search"></ion-icon>
             </button>
         </ion-col>
@@ -26,33 +26,22 @@
       <ion-col col-12>
           <ion-list >
               <ion-item >
-                  Logradouro:<br> {{resultApi.logradouro}}
+                  Logradouro:<br> {{ endereco.logradouro}}
                 </ion-item >
                 <ion-item >
-                  Bairro:<br> {{ resultApi.bairro }}
+                  Bairro:<br> {{ endereco.bairro }}
                 </ion-item>
                 <ion-item >
-                  Cidade:<br> {{ resultApi.localidade }}
+                  Cidade:<br> {{ endereco.localidade }}
                 </ion-item>
                 <ion-item >
-                  UF:<br> {{ resultApi.uf}}
+                  UF:<br> {{ endereco.uf}}
                 </ion-item>
                 <ion-item >
-                  IBGE:<br> {{ resultApi.ibge }}
+                  IBGE:<br> {{ endereco.ibge }}
                 </ion-item>
           </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>    
-<!--
-    <ion-item>
-        <button ion-button (click)="callApi()">
-          <ion-icon name="search"></ion-icon>
-        </button>
-    </ion-item>
--->
-<!--
-    <button ion-button secondary menuToggle >Toggle Menu</button>
--->
-    
   </ion-content>

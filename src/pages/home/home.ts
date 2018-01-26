@@ -14,13 +14,13 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public httpClient: HttpClient) {}
               
-  callApi():void {
-    this.httpClient.get(`http://viacep.com.br/ws/${this.feedApi.cep}/json/`)
-    .subscribe(
-      data =>{
-        this.resultApi = data;
-        console.log(data);
-      }
-    );
-  }
+    callApi():void {
+      this.httpClient.get(`http://viacep.com.br/ws/${this.feedApi.cep}/json/`)
+      .subscribe(
+        data =>{
+          this.resultApi = data;
+          console.log(data);
+        }
+      );
+    }
 }

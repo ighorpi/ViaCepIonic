@@ -10,6 +10,7 @@ export class HomePage {
 	
 	private cep;
 	private endereco:any = {};
+	vazio = "";
 	
   constructor(public navCtrl: NavController, private viacep: ViacepProvider) {}
 	

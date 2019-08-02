@@ -12,14 +12,13 @@
   <ion-grid>
     <ion-row>
       <ion-col>
- <!--          <ion-label color="primary">CEP: </ion-label> -->
-          <ion-searchbar type="tel" [(ngModel)]="cep"
+          <ion-searchbar class="pesquisa" type="tel" [(ngModel)]="cep"
           (ionInput)="getEndereco()"></ion-searchbar>
         </ion-col>
     </ion-row>
     <ion-row>
       <ion-col col-12>
-          <ion-list >
+          <ion-list class="pesquisa">
               <ion-item *ngIf="endereco.logradouro">
                   Logradouro:<br> {{ endereco.logradouro}}
                 </ion-item >
